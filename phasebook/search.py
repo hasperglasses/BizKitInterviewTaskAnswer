@@ -42,5 +42,10 @@ def search_users(args):
     for arg in args.items():
         id_list += search_id(arg)
 
+    id_list = list(dict.fromkeys(id_list))
 
-    return [d for d in USERS if d["id"] in id_list]
+    search_result =[]
+
+    for id in id_list:
+        search_result += [d for d in USERS if d["id"] == id]
+    return search_result
