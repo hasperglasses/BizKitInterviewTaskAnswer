@@ -40,7 +40,12 @@ def search_users(args):
     """
 
     # Implement search here!
+    
+    if args == {}:
+        return USERS
+
     id_list = []
+
     search_id(('id',args.get('id',None)),id_list)
     search_id(('name',args.get('name',None)),id_list) 
     search_id(('age',args.get('age',None)),id_list)
@@ -52,4 +57,5 @@ def search_users(args):
 
     for id in id_list:
         search_result += [d for d in USERS if d["id"] == id]
+        
     return search_result
