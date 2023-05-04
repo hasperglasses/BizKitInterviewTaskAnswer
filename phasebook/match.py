@@ -24,5 +24,3 @@ def is_match(fave_numbers_1, fave_numbers_2):
         return True
 
     return False
-
-
